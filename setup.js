@@ -31,23 +31,7 @@ async function setup(){
 
   const filesToProcess = [
     'client/package.json',
-    'client/index.html',
-    'server/DTOs/ExampleDTO.cs',
-    'server/DTOs/AccountDTO.cs',
-    'server/Program.cs',
-    'server/Data/AppDbContext.cs',
-    'server/Services/ExampleService.cs',
-    'server/Services/AccountService.cs',
-    'server/Models/Example.cs',
-    'server/Models/Account.cs',
-    'server/Repositories/AccountsRepository.cs',
-    'server/Repositories/ExamplesRepository.cs',
-    'server/Controllers/AccountController.cs',
-    'server/Controllers/ExampleController.cs',
-    'server/Startup.cs',
-    'server/Globals.cs',
-    'server/Properties/launchSettings.json',
-    'server/wwwroot/index.html'
+    'client/index.html'
   ];
   console.log('Processing files...');
 
