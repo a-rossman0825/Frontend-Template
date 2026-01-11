@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { RouterLink, useRoute } from "vue-router";
-import Login from "../LoginButton.vue";
 
 const route = useRoute();
 
@@ -17,20 +16,13 @@ function isActive(name: string) {
   <!-- SECTION Nav Logo -->
   <div class="mt-2 d-inline-flex align-items-start">
     <RouterLink :to="{ name: 'Home' }">
-      <button 
-        title="Return to Dashboard"
-        class="logo-btn mt-2"
-      >
+      <button title="Return to Dashboard" class="logo-btn mt-2">
         <i class="mdi mdi-layers-triple text-white fs-4" />
       </button>
     </RouterLink>
     <div class="ms-3">
-      <h1 class="h3 m-0 text-light">
-        FullStack
-      </h1>
-      <h2 class="fs-6 text-secondary">
-        Project Template
-      </h2>
+      <h1 class="h3 m-0 text-light">FullStack</h1>
+      <h2 class="fs-6 text-secondary">Project Template</h2>
     </div>
   </div>
   <!-- !SECTION -->
@@ -44,68 +36,12 @@ function isActive(name: string) {
         <p class="h5 ms-1">
           <i class="mdi mdi-home" />
         </p>
-        <p class="h5 ms-2">
-          Dashboard
-        </p>
+        <p class="h5 ms-2">Dashboard</p>
       </div>
     </RouterLink>
-    <RouterLink :to="{ name: 'Docs' }">
-      <div
-        class="nav-link mb-2 d-inline-flex ps-2 pe-4 pt-2 rounded"
-        :class="{ 'nav-link-active': isActive('Documentation') }"
-      >
-        <p class="h5 ms-1">
-          <i class="mdi mdi-notebook-multiple" />
-        </p>
-        <p class="h5 ms-2">
-          Documentation
-        </p>
-      </div>
-    </RouterLink>
-    <RouterLink :to="{ name: 'About' }">
-      <div
-        class="nav-link mb-2 d-inline-flex ps-2 pe-4 pt-2 rounded"
-        :class="{ 'nav-link-active': isActive('about') }"
-      >
-        <p class="h5 ms-1">
-          <i class="mdi mdi-information" />
-        </p>
-        <p class="h5 ms-2">
-          About
-        </p>
-      </div>
-    </RouterLink>
-    <RouterLink :to="{ name: 'Example' }">
-      <div
-        class="nav-link mb-2 d-inline-flex ps-2 pe-4 pt-2 rounded"
-        :class="{ 'nav-link-active': isActive('api_explorer') }"
-      >
-        <p class="h5 ms-1">
-          <i class="mdi mdi-flask" />
-        </p>
-        <p class="h5 ms-2">
-          Test API
-        </p>
-      </div>
-    </RouterLink>
-    <RouterLink :to="{ name: 'Faq' }">
-      <div
-        class="nav-link mb-2 d-inline-flex ps-2 pe-4 pt-2 rounded"
-        :class="{ 'nav-link-active': isActive('FAQ') }"
-      >
-        <p class="h5 ms-1">
-          <i class="mdi mdi-frequently-asked-questions" />
-        </p>
-        <p class="h5 ms-2">
-          FAQ
-        </p>
-      </div>
-    </RouterLink>
+    <!-- Add more nav links as you create new pages -->
   </nav>
   <!-- !SECTION -->
-  <div class="account-info border-top-blue">
-    <Login />
-  </div>
 </template>
 
 <style lang="scss" scoped>

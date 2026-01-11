@@ -1,21 +1,31 @@
 import globals from "globals";
-//@ts-expect-error ts(7016)
-import {
-  defineConfigWithVueTs,
-  vueTsConfigs,
-} from "@vue/eslint-config-typescript";
-import pluginVue from "eslint-plugin-vue";
 
-export default defineConfigWithVueTs(
-  pluginVue.configs["flat/essential"],
-  vueTsConfigs.recommended,
+import pluginVue from "eslint-plugin-vue";
+import tseslint from "@typescript-eslint/eslint-plugin";
+import tsparser from "@typescript-eslint/parser";
+
+export default [
+  {
+    files: ["**/*.vue"],
+    languageOptions: {
+      parser: pluginVue.processors[".vue"],
+    },
+  },
+  ...pluginVue.configs["flat/essential"],
   {
     files: ["**/*.{js,mjs,cjs,ts,tsx,vue}"],
     languageOptions: {
       globals: {
         ...globals.browser,
       },
-      parser: "@typescript-eslint/parser",
+      parser: tsparser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+      },
+    },
+    plugins: {
+      "@typescript-eslint": tseslint,
     },
     rules: {
       "no-unused-vars": "warn",
@@ -33,5 +43,5 @@ export default defineConfigWithVueTs(
       ],
       "vue/component-api-style": ["warn", ["script-setup", "composition"]],
     },
-  }
-);
+  },
+];
