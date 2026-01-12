@@ -1,10 +1,10 @@
 import Axios from "axios";
-import { baseURL } from "@/env";
+//import { baseURL } from "@/env";
 import { logger } from "@/utils/Logger";
 import type { AxiosError } from "axios";
 
 export const api = Axios.create({
-  baseURL,
+  //baseURL, // TODO - Uncomment and set your baseURL in src/env.local.ts
   timeout: 8000,
 });
 
